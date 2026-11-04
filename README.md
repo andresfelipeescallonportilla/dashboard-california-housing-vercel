@@ -86,3 +86,33 @@ This regenerates `lib/data/housing.json` and `lib/data/model.json`.
 ## Deployment
 
 The project deploys directly to [Vercel](https://vercel.com) with no extra configuration or environment variables.
+
+### Clone and run locally in Visual Studio Code
+
+1. Install [Git](https://git-scm.com/downloads), [Node.js 20.9 or newer](https://nodejs.org/), and [Visual Studio Code](https://code.visualstudio.com/). The project pins pnpm to version `12.3.4` in `package.json`.
+2. Open Visual Studio Code and open the Command Palette (`Ctrl+Shift+P` on Windows/Linux or `Cmd+Shift+P` on macOS).
+3. Run **Git: Clone**, enter `https://github.com/andresfelipeescallonportilla/dashboard-california-housing-vercel.git`, and select the parent folder where you want the project saved.
+4. When cloning finishes, select **Open** to open the cloned repository in Visual Studio Code. If prompted, trust the folder. Alternatively, use **File > Open Folder** and choose the cloned `dashboard-california-housing-vercel` folder.
+5. In Visual Studio Code, choose **Terminal > New Terminal**. Confirm that the terminal is at the repository root, where `package.json` is located.
+6. Install pnpm `12.3.4` if it is not already available. For example, run `npm install --global pnpm@12.3.4` in a terminal.
+7. Install the project dependencies:
+
+   ```bash
+   pnpm install
+   ```
+
+8. Start the development server:
+
+   ```bash
+   pnpm dev
+   ```
+
+9. Open [http://localhost:3000](http://localhost:3000) in a browser. Keep the terminal running while you use the dashboard; press `Ctrl+C` there to stop the server.
+10. To verify and run a production build locally instead, stop the development server, then run:
+
+    ```bash
+    pnpm build
+    pnpm start
+    ```
+
+    Once the build completes and the server starts, open [http://localhost:3000](http://localhost:3000). Press `Ctrl+C` to stop it. No Python installation or environment variables are needed for normal use.
